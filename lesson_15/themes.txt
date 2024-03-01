@@ -1,0 +1,18 @@
+pytest(new project) +
+
+oop style, functional style
+
+structure, naming +
+pytest.raises +
+conftest
+fixtures:
+- scope +
+- autouse +
+- fixture(fixture) +
+marks
+-default(xfail, skip, skipif) +
+-custom +
+- parametrise
+ - depends ?
+raises +
+pytest.ini +
