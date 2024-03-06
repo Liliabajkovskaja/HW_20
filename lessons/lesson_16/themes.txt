@@ -1,0 +1,18 @@
+locators
+- xpath
+- css
+
+Selenium
+ - drivers +
+ - browsers +
+ - interactions
+ - elements
+   - find
+   - click
+   - clear
+   - send_keys
+ - actions
+ - keys
+
+
+ # (//textarea[@aria-controls]/../../..//span)[last()]

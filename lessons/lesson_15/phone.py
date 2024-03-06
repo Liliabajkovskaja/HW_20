@@ -16,7 +16,7 @@ class Phone:
 
     @model.setter
     def model(self, value):
-        if isinstance(value, str):
+        if not isinstance(value, str):
             raise TypeError('Model must be string')
         self.__model = value
 

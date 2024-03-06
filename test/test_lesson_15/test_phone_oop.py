@@ -1,5 +1,5 @@
 import pytest
-from lesson_15.phone import Phone
+from lessons.lesson_15.phone import Phone
 
 
 class TestPhone:
@@ -10,6 +10,8 @@ class TestPhone:
     expected_model = 'Iphone 13'
     expected_brand = 'Apple'
     phone = Phone(expected_brand, expected_model)
+
+
     def setup_method(self):
 
         print('\nsetup_method was run')
