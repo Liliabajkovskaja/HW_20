@@ -22,3 +22,9 @@ class LoginPage(BasePage):
     def click_login(self):
         self._click_button((By.XPATH, self.locators.login_btn_xpath_locator))
         return ProductsPage(self.driver)
+
+    def do_login(self, username, password):
+        self.set_user_name(username)
+        self.set_password(password)
+        self.click_login()
+        return self

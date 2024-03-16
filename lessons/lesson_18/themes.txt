@@ -1,0 +1,11 @@
+
+additional tests: +
+ - elements count
+ - unique titles
+
+interaction by js(execute_script) +
+scroll +
+screenshot +
+cookies, LocalStorage
+debug
+custom waiter
