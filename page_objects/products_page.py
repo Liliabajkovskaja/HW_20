@@ -1,8 +1,11 @@
+import logging
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from page_objects.base_page import BasePage
+from utils.custom_wait import custom_wait
 
-
+logger = logging.getLogger(__file__)
 
 
 class ProductsPage(BasePage):
@@ -30,4 +33,11 @@ class ProductsPage(BasePage):
 
     def scroll_by_selenium_to_last_item(self, number):
         el = self.get_element_by_number(locator=(By.XPATH, self.buttons_add_to_card), number=number)
+
+        logger.info(f'Found {self.buttons_add_to_card} number {number}')
+
+        ActionChains(driver=self.driver).scroll_to_element(el).perform()
+
+    def scroll_by_selenium_to_last_item_with_custom_wait(self, number):
+        el = custom_wait(driver=self.driver, el_numbers=number, locator=(By.XPATH, self.buttons_add_to_card))[number - 1]
         ActionChains(driver=self.driver).scroll_to_element(el).perform()

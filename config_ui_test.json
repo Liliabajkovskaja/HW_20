@@ -1,0 +1,9 @@
+{
+  "BASE_USER": "standard_user",
+  "BASE_PASSWORD": "secret_sauce",
+  "BASE_URL": "https://www.saucedemo.com/",
+  "BROWSER": "chrome",
+  "Some_None": null,
+  "Some_bool": true
+}
+

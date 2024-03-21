@@ -1,0 +1,12 @@
+
+headless +
+cookies, LocalStorage +
+debug +
+custom waiter +
+
+logs +
+
+parsing
+- cli(positional, --required, -optionals)
+- yaml(pyYAML, %name%)
+- json(loads, dumps, example with configs and dun pytest with extra params)

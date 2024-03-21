@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.webdriver import Options
 
 
 class DriverFactory:
@@ -8,7 +9,9 @@ class DriverFactory:
 
     def get_driver(self):
         if self._driver_type.lower() == 'chrome':
-            return webdriver.Chrome()
+            options = Options()
+            # options.add_argument('--headless')
+            return webdriver.Chrome(options=options)
         elif self._driver_type.lower() == 'firefox':
             return webdriver.Firefox()
         else:

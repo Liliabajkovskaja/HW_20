@@ -13,6 +13,7 @@ _config.read(_config_path)
 
 class ConfigManager:
 
+
     url = _config.get('app_data', 'BASE_URL')
     user_name = _config.get('user_data', 'BASE_USER')
     user_pass = _config.get('user_data', 'BASE_PASSWORD')
