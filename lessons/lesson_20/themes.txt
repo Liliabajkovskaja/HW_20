@@ -1,0 +1,14 @@
+- приклад cli для pytest +
+- приклад динамічної назви для файлу логів +
+
+- regex: http0s://regex101.com/, ? +, {}, [], /d, /w +
+  - findall +
+  - sub
+  - split
+  - match/fullmatch +
+
+- requests  https://swapi.dev/, https://petstore.swagger.io/
+  - requests methods
+  - headers
+  - response
+  - exceptions
