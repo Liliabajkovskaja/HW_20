@@ -1,0 +1,10 @@
+- Пояснення для search.groups
+
+- https://gorest.co.in/, https://practice.expandtesting.com/notes/api/api-docs/
+
+- enum +
+- dataclass +
+- schema validation +
+
+- pytest html reported
+- allure
