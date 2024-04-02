@@ -1,5 +1,6 @@
 import logging
 
+import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from page_objects.base_page import BasePage
@@ -31,11 +32,13 @@ class ProductsPage(BasePage):
         el = self.get_element_by_number(locator=(By.XPATH, self.buttons_add_to_card), number=number)
         self.driver.execute_script('arguments[0].scrollIntoView()', el)
 
+    @allure.step('Scroll to item number {number}')
     def scroll_by_selenium_to_last_item(self, number):
         el = self.get_element_by_number(locator=(By.XPATH, self.buttons_add_to_card), number=number)
 
         logger.info(f'Found {self.buttons_add_to_card} number {number}')
 
+        allure.step(f'scroll to element number {number}')
         ActionChains(driver=self.driver).scroll_to_element(el).perform()
 
     def scroll_by_selenium_to_last_item_with_custom_wait(self, number):

@@ -3,6 +3,7 @@ from time import time
 import os.path as path
 from typing import Type
 
+import allure
 import pytest
 from pytest import fixture
 from selenium.common import TimeoutException
@@ -49,10 +50,21 @@ def get_driver(env) -> WebDriver:
     driver.quit()
 
 
-@fixture(autouse=False)
+@fixture(autouse=True)
 def make_screenshot_after_test(get_driver):
     yield
-    get_driver.save_screenshot(f'{ROOT_PATH}/{time()}.png')
+
+    file_name = f'{time()}.png'
+    full_path = path.join(ROOT_PATH, file_name)
+    get_driver.save_screenshot(full_path)
+
+    allure.attach.file(
+        full_path,
+        name=file_name,
+        attachment_type=allure.attachment_type.PNG
+    )
+
+
 
 
 @fixture
