@@ -1,7 +1,5 @@
-import json
-
-from api_service.base_api import BaseApi
-from api_service.users.dtos.responses.create_user_dto import UserSchema, UserDTO
+from core.api_service.base_api import BaseApi
+from core.api_service.users.dtos.responses.create_user_dto import UserSchema, UserDTO
 
 
 class UsersAPI:

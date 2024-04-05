@@ -3,7 +3,7 @@ import random
 import pytest
 from faker import Faker
 
-from api_service.users.controllers.users_api import UsersAPI
+from core.api_service.users.controllers.users_api import UsersAPI
 
 faker = Faker()
 user_api = UsersAPI()

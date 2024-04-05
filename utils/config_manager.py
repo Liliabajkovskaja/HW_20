@@ -3,7 +3,7 @@ import configparser
 
 from os import path
 
-ROOT_PATH = path.dirname(path.dirname(path.abspath(__file__)))
+from utils.constants import ROOT_PATH
 
 _config_path = path.join(ROOT_PATH, 'config_ui_test.ini')
 

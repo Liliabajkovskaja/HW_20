@@ -1,7 +1,7 @@
 from assertpy import assert_that, soft_assertions
 
-from api_service.users.dtos.payload_create_user import CreateUserPayload
-from api_service.users.dtos.responses.create_user_dto import UserSchema, UserDTO
+from core.api_service.users.dtos.payload_create_user import CreateUserPayload
+from core.api_service.users.dtos.responses.create_user_dto import UserDTO
 
 
 class UserAsserts:

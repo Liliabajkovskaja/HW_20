@@ -1,7 +1,7 @@
 import pytest
 import allure
 
-from api_service.users.dtos.payload_create_user import CreateUserPayload
+from core.api_service import CreateUserPayload
 from test.test_lesson_21.conftest import user_api
 from utils.enums import AuthTokenInvalid
 
