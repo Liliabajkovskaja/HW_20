@@ -1,9 +1,9 @@
 import logging
 
-from core.api_service import UserAsserts
+from core.api_service.users.assertations.user_aserts import UserAsserts
 from utils.enums import Enviroments
 from test.test_lesson_21.conftest import user_api
-from core.api_service import CreateUserPayload
+from core.api_service.users.dtos.payload_create_user import CreateUserPayload
 
 import pytest
 import os

@@ -2,8 +2,8 @@ import logging
 
 import pytest
 
-from core.api_service import UserAsserts
-from core.api_service import CreateUserPayload
+from core.api_service.users.assertations.user_aserts import UserAsserts
+from core.api_service.users.dtos.payload_create_user import CreateUserPayload
 from test.test_lesson_21.conftest import user_api
 
 logger = logging.getLogger(__file__)
