@@ -1,5 +1,5 @@
-from page_objects.login_page import LoginPage
-from page_objects.products_page import ProductsPage
+from core.page_objects.login_page import LoginPage
+from core.page_objects.products_page import ProductsPage
 
 
 def test_login_user(open_login_page, get_user_name, get_user_password):

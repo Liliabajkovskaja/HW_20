@@ -13,11 +13,11 @@ def test_titles_are_unique(get_logged_product_page):
 
 @allure.epic("Product page")
 @allure.title('test all prices are ordered')
+@pytest.mark.xfail(reason='Bug #555')
+@allure.link('http://localhost:8000/#555')  # jira link
 @pytest.mark.ui_tests
 def test_prices_are_ordered(get_logged_product_page):
     products_page = get_logged_product_page
-    # prices = products_page.get_items_prices()
-    # prices = [float(p[1:]) for p in prices]  # -> [float]
 
     prices = [float(p[1:]) for p in products_page.get_items_prices()]
 

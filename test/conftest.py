@@ -9,8 +9,8 @@ from pytest import fixture
 from selenium.common import TimeoutException
 from selenium.webdriver.remote.webdriver import WebDriver
 
-from page_objects.login_page import LoginPage
-from page_objects.products_page import ProductsPage
+from core.page_objects.login_page import LoginPage
+from core.page_objects.products_page import ProductsPage
 from utils.driver_factory import DriverFactory
 from utils.config_manager import ROOT_PATH
 from utils.config_manager import ConfigManager as iniManager
@@ -50,12 +50,11 @@ def get_driver(env) -> WebDriver:
     driver.quit()
 
 
-@fixture(autouse=True)
 def make_screenshot_after_test(get_driver):
     yield
 
     file_name = f'{time()}.png'
-    full_path = path.join(ROOT_PATH, file_name)
+    full_path = path.join(path.join(ROOT_PATH, 'screens'), file_name)
     get_driver.save_screenshot(full_path)
 
     allure.attach.file(

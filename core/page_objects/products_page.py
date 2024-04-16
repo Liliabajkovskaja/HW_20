@@ -3,7 +3,7 @@ import logging
 import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from page_objects.base_page import BasePage
+from core.page_objects.base_page import BasePage
 from utils.custom_wait import custom_wait
 
 logger = logging.getLogger(__file__)
@@ -12,7 +12,7 @@ logger = logging.getLogger(__file__)
 class ProductsPage(BasePage):
     shopping_cart_class_locator = 'shopping_cart_link'
     items_titles = 'inventory_item_name '
-    c = '.inventory_item_price '
+    items_prices = '.inventory_item_price '
     buttons_add_to_card = "//button[contains(@data-test, 'add-to-cart')]"
 
     def __init__(self, driver):

@@ -1,7 +1,7 @@
 import pytest
 
-from page_objects.login_page import LoginPage
-from page_objects.products_page import ProductsPage
+from core.page_objects.login_page import LoginPage
+from core.page_objects.products_page import ProductsPage
 
 
 @pytest.mark.ui_tests

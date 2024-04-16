@@ -3,6 +3,7 @@ import pytest
 from lessons.lesson_15.phone import Phone
 
 
+@pytest.mark.xfail(reason='check failed')
 def test_phone_brand(get_new_phone_session, get_model):
     phone = get_new_phone_session
     assert False

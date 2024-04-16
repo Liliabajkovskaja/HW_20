@@ -1,4 +1,4 @@
-from page_objects.login_page import LoginPage
+from core.page_objects.login_page import LoginPage
 
 
 def test_simple(open_login_page, get_user_name, get_user_password):

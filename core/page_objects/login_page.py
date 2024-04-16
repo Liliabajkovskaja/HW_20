@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 
-from page_objects.base_page import BasePage
-from page_objects.locators.login_page import Locators
-from page_objects.products_page import ProductsPage
+from core.page_objects.base_page import BasePage
+from core.page_objects.locators.login_page import Locators
+from core.page_objects.products_page import ProductsPage
 
 
 class LoginPage(BasePage):
