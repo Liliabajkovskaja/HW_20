@@ -1,6 +1,0 @@
-- DB:
-  - create table(primary key)
-  - insert into
-  - select + fetchall
-
-- заняття 12.04

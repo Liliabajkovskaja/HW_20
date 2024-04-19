@@ -1,7 +1,0 @@
-
-
-
-- pytest html reporter:
-  - https://pytest-html.readthedocs.io/en/latest/user_guide.html
-  - https://pypi.org/project/pytest-html-reporter/
-- allure

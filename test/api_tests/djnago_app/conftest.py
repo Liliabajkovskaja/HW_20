@@ -12,10 +12,11 @@ def create_read_user():
     resp = django_ctrl.create_user(user_data.serialize())
     created_users.append(resp.id_)
     yield resp
+    django_ctrl.delete_user(resp.id_)
 
 
-@pytest.fixture(scope='session', autouse=True)
-def delete_user_function_scope():
-    yield
-    for k in created_users:
-        django_ctrl.delete_user(k.id_)
+# @pytest.fixture(scope='session', autouse=True)
+# def delete_user_function_scope():
+#     yield
+#     for k in created_users:
+#         django_ctrl.delete_user(k.id_)

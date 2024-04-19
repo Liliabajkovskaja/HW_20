@@ -1,8 +1,0 @@
-assert bool, str +
-
-- wait
-  - implicit +
-  - explicit +
-- config.ini, configparser +
-- base page
-- page objects
