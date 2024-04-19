@@ -1,10 +1,14 @@
+from core.api_service.django_app.controller.users_api import DjangoUsersAPIUsers
 from core.api_service.django_app.dtos.response_user_dto import DjangoUserDTO
 from assertpy import soft_assertions, assert_that
 
 
+django_ctrl = DjangoUsersAPIUsers()
+
+
 def assert_get_all_users(resp: [DjangoUserDTO], expected_user: DjangoUserDTO):
 
-    assert_that(len(resp), 'quantity of users more tan 0').is_not_zero()
+    assert_that(len(resp), 'quantity of users more than 0').is_not_zero()
 
     ids = [k.id_ for k in resp]
 
@@ -21,3 +25,8 @@ def assert_user(actual_user: DjangoUserDTO, expected_user: DjangoUserDTO):
     with soft_assertions():
         assert_that(actual_user.username, 'username').is_equal_to(expected_user.username)
         assert_that(actual_user.email, 'email').is_equal_to(expected_user.email)
+
+
+def assert_user_was_created(expected_user: DjangoUserDTO, user_id: int):
+    api_user = django_ctrl.get_user(user_id)
+    assert_user(api_user, expected_user)

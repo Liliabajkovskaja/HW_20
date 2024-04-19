@@ -1,17 +1,16 @@
-from core.api_service.base_api import BaseApi
+from core.api_service.django_app.controller.base_api import DjangoAPIBase
 from core.api_service.django_app.dtos.payload_user_dto import PayloadDjangoUserDTO
 from core.api_service.django_app.dtos.response_user_dto import DjangoUserDTO, DjangoUserSchema
 
 
-class DjangoUsersAPI:
+class DjangoUsersAPIUsers(DjangoAPIBase):
 
-    api_executor = BaseApi()
-    base_url = "http://localhost:8000/"
-    users_url = f"{base_url}users/"
+    def __init__(self):
+        self.users_url = f"{self.base_url}api/users/"
 
-    def get_all_users(self) -> [DjangoUserDTO]:
+    def get_all_users(self, query_params=None) -> [DjangoUserDTO]:
 
-        return self.api_executor.get(url=self.users_url, expected_status_code=200,
+        return self.api_executor.get(url=self.users_url, params=query_params, expected_status_code=200,
                                      schema=DjangoUserSchema(many=True))
 
     def get_user(self, user_id) -> DjangoUserDTO:

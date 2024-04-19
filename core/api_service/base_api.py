@@ -26,7 +26,7 @@ class BaseApi:
                                                                   f'actual {response.status_code}')
         if response.status_code < 400 and schema:
             return schema.load(response.json())
-        if response.text:
+        if response.text:  # response is not empty
             return response.json()
         else:
             return response.text
@@ -41,6 +41,10 @@ class BaseApi:
 
     def put(self, url, data=None, headers=None, expected_status_code=None, schema=None):
         return self.__execute_request('put', url=url, data=data, headers=headers,
+                                      expected_status_code=expected_status_code, schema=schema)
+
+    def path(self, url, data=None, headers=None, expected_status_code=None, schema=None):
+        return self.__execute_request('path', url=url, data=data, headers=headers,
                                       expected_status_code=expected_status_code, schema=schema)
 
     def delete(self, url, headers=None, expected_status_code=None):
