@@ -4,7 +4,6 @@ from dataclasses import dataclass
 
 
 class DjangoUserSchema(Schema):
-
     id_ = fields.Int(data_key='id')
     username = fields.Str()
     email = fields.Email()

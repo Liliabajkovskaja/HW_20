@@ -6,7 +6,6 @@ from dataclasses import dataclass
 
 
 class DjangoRoleWithUsersSchema(Schema):
-
     id_ = fields.Int(data_key='id')
     name = fields.Str()
     users = fields.List(fields.Int())

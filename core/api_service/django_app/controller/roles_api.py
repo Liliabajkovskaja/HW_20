@@ -14,16 +14,33 @@ class DjangoRolesAPI(DjangoAPIBase):
         return self.api_executor.get(url=url, params=query_params, expected_status_code=200,
                                      schema=DjangoRoleWithUsersSchema())
 
-    def post_add_user(self, role_id, data=None, expected_status_code=201) -> MessageDTO:
-        url = f'{self.roles_url}{role_id}/add_user/'
-        return self.api_executor.post(url=url, data=data, expected_status_code=expected_status_code,
-                                      schema=MessageSchema())
+    # def get_roles(self) -> DjangoRoleWithUsersDTO:
+    #     url = f'{self.roles_url}/'
+    #     return self.api_executor.get(url=url,  expected_status_code=200,
+    #                                  schema=DjangoRoleSchema())
+
+    def get_roles(self):
+        url = self.roles_url
+        return self.api_executor.get(url=url, expected_status_code=200, schema=DjangoRoleSchema(many=True))
+
+    def get_role_by_id(self, role_id: int) -> DjangoRoleDTO:
+        url = f"{self.roles_url}{role_id}/"
+        return self.api_executor.get(url=url, expected_status_code=200, schema=DjangoRoleSchema())
 
     def post_create_role(self, data=None) -> DjangoRoleDTO:
         return self.api_executor.post(url=self.roles_url, data=data, expected_status_code=201,
                                       schema=DjangoRoleSchema())
 
+    def post_add_user(self, role_id, data=None, expected_status_code=201) -> MessageDTO:
+        url = f'{self.roles_url}{role_id}/add_user/'
+        return self.api_executor.post(url=url, data=data, expected_status_code=expected_status_code,
+                                      schema=MessageSchema())
+
     def post_delete_role(self, role_id) -> DjangoRoleDTO:
         url = f'{self.roles_url}{role_id}/'
 
         return self.api_executor.delete(url=url, expected_status_code=204)
+
+    def put_role_by_id(self, role_id, data=None) -> DjangoRoleDTO:
+        url = f"{self.roles_url}{role_id}/"
+        return self.api_executor.put(url=url, data=data, expected_status_code=200, schema=DjangoRoleSchema())

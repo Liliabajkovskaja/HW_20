@@ -4,8 +4,7 @@ from dataclasses import dataclass
 
 
 class DjangoRoleSchema(Schema):
-
-    id_ = fields.Int(data_key='id')
+    id = fields.Int(data_key='id')
     name = fields.Str()
 
     @post_load
@@ -15,5 +14,5 @@ class DjangoRoleSchema(Schema):
 
 @dataclass
 class DjangoRoleDTO:
-    id_: int
+    id: int
     name: str
